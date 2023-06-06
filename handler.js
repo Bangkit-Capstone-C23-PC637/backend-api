@@ -5,8 +5,8 @@ const calculateBMI = (req, res) => {
       return res.status(400).json({ error: 'Tinggi dan berat badan harus diberikan.' });
     }
   
-    const heightInCm = height / 100;
-    const bmi = weight / ((heightInCm /100) ** 2);
+    const heightInMeter = height / 100;
+    const bmi = weight / ((heightInMeter * heightInMeter));
   
     let category;
     if (bmi < 18.5) {
@@ -19,10 +19,11 @@ const calculateBMI = (req, res) => {
       category = 'Obese';
     }
   
-    res.json({ height: heightInCm, weight, bmi, category  });
+    res.json({ height, weight, bmi, category  });
   };
-  
-  module.exports = {
+
+
+module.exports = {
     calculateBMI,
   };
   

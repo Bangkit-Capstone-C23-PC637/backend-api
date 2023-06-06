@@ -1,5 +1,5 @@
 const express = require('express');
-const handler = require ('handler');
+const handler = require ('../backend-api/handler');
 
 const router = express.Router();
 
