@@ -1,8 +1,10 @@
 const express = require('express');
-const handler = require ('../backend-api/handler');
+const handler = require('../backend-api/handler');
+const { authenticateToken, generateBearerToken } = require('./middleware');
 
 const router = express.Router();
 
-router.post ('/calculate-bmi', handler.calculateBMI);
+router.post('/calculate-bmi', authenticateToken, handler.calculateBMI);
+router.post('/generate-token', generateBearerToken);
 
 module.exports = router;
