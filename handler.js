@@ -25,5 +25,4 @@ const calculateBMI = (req, res) => {
 
 module.exports = {
     calculateBMI,
-  };
-  
+}; 

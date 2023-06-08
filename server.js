@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api', routes);
 
-app.listen(5000, () => {
-  console.log('Server berjalan pada port 5000');
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log('Server berjalan pada port', port);
 });
