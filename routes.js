@@ -1,5 +1,5 @@
 const express = require('express');
-const handler = require('../backend-api/handler');
+const handler = require('./handler');
 const { authenticateToken, generateBearerToken } = require('./middleware');
 
 const router = express.Router();
